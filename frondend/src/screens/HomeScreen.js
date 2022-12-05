@@ -5,16 +5,15 @@ import Product from '../components/Product'
 import { listProducts } from '../actions/productActions'
 import Loding from '../components/Loadar'
 import  ProductCarousel  from '../components/ProductCarousel'
-import { useNavigate , useSearchParams} from 'react-router-dom'
+import { useSearchParams} from 'react-router-dom'
 import Message from '../components/Messages'
-import Paginate from '../components/Paginate'
 
 
 function HomeScreen() {
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
-  const { error, loading, products,page, pages } = productList
+  const { error, loading, products } = productList
   
   const [searchParams] = useSearchParams()
   const keyword = searchParams.get('keyword')
@@ -22,8 +21,7 @@ function HomeScreen() {
   
   useEffect(() => {
     dispatch(listProducts(keyword))
-
-  }, [dispatch , keyword])
+  }, [dispatch,keyword])
 
   return (
     <div>
@@ -35,7 +33,7 @@ function HomeScreen() {
         <div>
           <Row>
             {products?.map(product => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Col className="Colum" key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
             ))}

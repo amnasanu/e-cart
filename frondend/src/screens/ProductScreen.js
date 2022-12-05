@@ -11,7 +11,7 @@ import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 
 
 
-function ProductScreen(history) {
+function ProductScreen() {
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState('')
@@ -67,8 +67,8 @@ function ProductScreen(history) {
             : (
               <div>
                 <Row>
-                  <Col md={6}>
-                    <Image className='img' src={product.image} alt={product.name} fluid />
+                  <Col md={6} className="img-col">
+                    <Image className='single-img' src={product.image} alt={product.name} fluid />
                   </Col>
                   <Col md={3}>
                     <ListGroup variant="flush">
@@ -85,7 +85,7 @@ function ProductScreen(history) {
                       </ListGroup.Item>
 
                       <ListGroup.Item>
-                        Discription :${product.description}
+                        Discription : {product.description}
                       </ListGroup.Item>
                     </ListGroup>
                   </Col>
@@ -95,7 +95,7 @@ function ProductScreen(history) {
                         <ListGroup.Item>
                           <Row>
                             <Col>Price:</Col>
-                            <Col><strong>${product.price}</strong></Col>
+                            <Col><strong>{product.price}</strong></Col>
                           </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
@@ -131,7 +131,10 @@ function ProductScreen(history) {
                         )}
 
                         <ListGroup.Item>
-                          <Button onClick={addToCartHandler} className='btn-block' disabled={product.countInStock == 0} type='button'>Add to Cart</Button>
+                          <div className="button-wrap">
+
+                          <Button onClick={addToCartHandler} className='btn-block' disabled={product.countInStock === 0} type='button'>Add to Cart</Button>
+                          </div>
                         </ListGroup.Item>
                       </ListGroup>
                     </Card>
