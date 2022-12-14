@@ -47,10 +47,12 @@ function ShippingScreen({history}) {
                        <Form.Label>Country</Form.Label>
                        <Form.Control required type='text' placeholder = 'Enter Country' value={country ? country : ''} onChange={(e) => setCountry(e.target.value)}></Form.Control>
         </Form.Group>
+<div className="btn-wrap" style={{display:"flex"}}>
 
-        <Button type = 'submit' variant = 'primary'>
+        <Button className='btn-block' style={{justifyContent:"center" ,marginTop:"20px"}} type = 'submit' variant = 'primary'>
             Continue
         </Button>
+</div>
 
         </Form>
     </FormContainer>

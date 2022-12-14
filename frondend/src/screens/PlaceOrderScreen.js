@@ -152,9 +152,11 @@ function PlaceOrderScreen({history}) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <Button type='button' className = 'btn-block' disabled={cart.cartItems ==0} onClick = {placeOrder}>
+                            <div className="btn-wrap " style={{display:"flex"}}>
+                            <Button type='button' style={{justifyContent:"center"}} className = 'btn-block' disabled={cart.cartItems ==0} onClick = {placeOrder}>
                              Place Order
                             </Button>
+                            </div>
                         </ListGroup.Item>
                     </ListGroup>
                 </Card>

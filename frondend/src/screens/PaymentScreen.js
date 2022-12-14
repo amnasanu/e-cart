@@ -35,7 +35,11 @@ function PaymentScreen({history}) {
                 </Form.Check>
                 </Col>
             </Form.Group>
-          <Button type = "submit" variant= 'primary'>Continue</Button>
+<div className="btn-wrap" style={{display:"flex"}}>
+
+          <Button type = "submit" style={{margin:"auto" ,marginTop:"20px"}} className='btn-block' variant= 'primary'>Continue</Button>
+</div>
+
         </Form>
     </FormContainer>
 
