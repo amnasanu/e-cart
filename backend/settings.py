@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6p69d#f087dcuxwq2(v_h()-c)uc)_+yw4=6@$yi(=ravo#b@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','ecart.herokuapp.com','e-cart.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','e-cart.up.railway.app']
 
 
 # Application definition
